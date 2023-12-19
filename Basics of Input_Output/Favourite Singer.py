@@ -1,3 +1,4 @@
+
 total_songs = int(input())
 song_dict = dict()
 
@@ -15,3 +16,20 @@ for i,j in song_dict.items():
         fav_singer_list.append(i)
 
 print(len(fav_singer_list))
+
+
+# Otherway
+from collections import Counter
+
+total_songs = int(input())
+song = input().split()
+
+song_dict = Counter(song)
+max_count = max(song_dict.values())
+
+fav_singer_set = set()
+for singer,count in song_dict.items():
+    if count == max_count:
+        fav_singer_set.add(singer)
+
+print(len(fav_singer_set))
